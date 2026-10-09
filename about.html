@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Project — Tech Core</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+
+  <!-- Internal Page Specific Enhancements -->
+  <!-- Internal Page Specific Enhancements (Updated Attractive Dark Theme) -->
+  <style>
+    /* 1st Screenshot Upgrade: Metrics Banner (Black Theme with Subtle Border Glow) */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+      padding: 2rem 1.5rem;
+      background: #000000; /* Rich Pitch Black */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .metric-card {
+      text-align: center;
+      padding: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-3px);
+    }
+    .metric-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #ffffff; /* Bright Crisp White */
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #a1a1aa; /* High contrast muted text */
+      margin-top: 0.5rem;
+    }
+
+    /* 2nd Screenshot Upgrade: Architecture Flow Container */
+    .arch-container {
+      margin: 4rem 0;
+      padding: 2.5rem;
+      background: #0a0a0c; /* Deep Rich Black/Dark Canvas */
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    .arch-subtitle {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888893;
+    }
+    .arch-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-top: 0.3rem;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+    .arch-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .arch-step {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.75rem 1.25rem;
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .arch-step:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-5px);
+    }
+    .arch-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #000000; /* Contrast Badge */
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .arch-step h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: #ffffff;
+    }
+    .arch-step p {
+      font-size: 0.88rem;
+      color: #d4d4d8; /* Very clear light grey for reading */
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">TECH CORE.</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="resources.html">Resources</a>
+      <a href="courses.html">Courses</a>
+       <a href="author.html">Author</a>
+      <a href="about.html" class="active">About</a>
+    </div>
+    <div class="nav-right">
+      <input type="text" placeholder="Search guides..." class="search-input">
+      <a href="account.html" class="btn-black" style="text-decoration: none;">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- About Page Container -->
+  <main class="container">
+
+    <!-- Top Overview Section (Reveal Up) -->
+    <section style="margin-bottom: 3.5rem;" class="reveal-up">
+      <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Project Case Study</span>
+      <h1 style="font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0 1rem 0; letter-spacing: -0.02em;">Building a High-Reliability Developer Knowledge Base</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 800px; line-height: 1.6;">
+        Modern frontend engineers waste hours sifting through fragmented, ad-cluttered tutorials. Tech Core was designed to offer clean, verified, and architecture-first technical guides with instant interactive feedback.
+      </p>
+    </section>
+
+    <!-- Meta Details Grid (Reveal Left / Reveal Right) -->
+    <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); margin-bottom: 3rem;">
+      
+      <!-- My Role Section (Left Entrance) -->
+      <div class="reveal-left">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">My Role</h4>
+        <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Mahnoor Fatima</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">
+          Frontend Developer & AI Learner — Leading full-stack web application architecture, crafting responsive UI components, structuring smooth CSS keyframes, and integrating interactive client-side AI modules.
+        </p>
+      </div>
+
+      <!-- Tool Used Section (Right Entrance) -->
+      <div class="reveal-right">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">Tech Stack & Tools</h4>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="btn-outline">HTML5 & CSS3</span>
+          <span class="btn-outline">Vanilla JS (ES6+)</span>
+          <span class="btn-outline">VS Code & Git</span>
+          <span class="btn-outline">Python & React</span>
+        </div>
+      </div>
+
+    </section>
+<!-- NEW FEATURE 1: Tech Stack & System Live Metrics Banner -->
+    <section class="metrics-grid reveal-up">
+      <div class="metric-card">
+        <div class="metric-value">99.9%</div>
+        <div class="metric-label">Lighthouse Performance</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">100+</div>
+        <div class="metric-label">Architecture Case Studies</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">&lt; 50ms</div>
+        <div class="metric-label">Search Query Latency</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Zero</div>
+        <div class="metric-label">Ad Interruptions</div>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution 2x2 Grid Section -->
+    <section class="ps-matrix-container">
+      <div class="ps-grid">
+
+        <!-- Top Left: Problem Statement Card -->
+        <div class="ps-card ps-card-dark">
+          <h2 class="ps-title">Problem Statement</h2>
+          <ul class="ps-list">
+            <li>
+              <span class="ps-icon ps-icon-alert">⚠️</span>
+              <span>Most web development blogs focus on superficial code snippets, not deep architecture.</span>
+            </li>
+            <li>
+              <span class="ps-icon ps-icon-alert">⚠️</span>
+              <span>Search architectures are weak, making specific production case studies hard to find.</span>
+            </li>
+            <li>
+              <span class="ps-icon ps-icon-alert">⚠️</span>
+              <span>Reading interfaces are clutter-heavy with ads, pop-ups, and unreadable typography.</span>
+            </li>
+            <li>
+              <span class="ps-icon ps-icon-alert">⚠️</span>
+              <span>AI implementations and full-stack setups are rarely covered step-by-step.</span>
+            </li>
+          </ul>
+          <a href="#" class="ps-corner-arrow" title="Learn More">↗</a>
+        </div>
+
+        <!-- Top Right: Problem Image -->
+        <div class="ps-card ps-card-image">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Engineer working on code">
+        </div>
+
+        <!-- Bottom Left: Solution Image -->
+        <div class="ps-card ps-card-image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Developer collaboration">
+        </div>
+
+        <!-- Bottom Right: The Solutions Card -->
+        <div class="ps-card ps-card-light">
+          <h2 class="ps-title">The Solutions</h2>
+          <ul class="ps-list">
+            <li>
+              <span class="ps-icon ps-icon-check">✔</span>
+              <span>A brutalist, distraction-free reading interface optimized for cognitive focus.</span>
+            </li>
+            <li>
+              <span class="ps-icon ps-icon-check">✔</span>
+              <span>A highly specific tagging and filtering system for instant code retrieval.</span>
+            </li>
+            <li>
+              <span class="ps-icon ps-icon-check">✔</span>
+              <span>Deep-dive, mathematically structured articles written for senior engineers.</span>
+            </li>
+            <li>
+              <span class="ps-icon ps-icon-check">✔</span>
+              <span>Clear typography hierarchies built for quick skimming and deep reading.</span>
+            </li>
+          </ul>
+          <a href="#" class="ps-corner-arrow" title="View Solutions">↗</a>
+        </div>
+
+      </div>
+    </section>
+
+   <!-- NEW FEATURE 2: Interactive System Flow Diagram Section -->
+    <section class="arch-container reveal-up">
+      <span class="arch-subtitle">Platform Infrastructure</span>
+      <h2 class="arch-title">Tech Core Architecture Pipeline</h2>
+      
+      <div class="arch-flow">
+        <div class="arch-step">
+          <span class="arch-badge">STEP 01</span>
+          <h4>Client Request</h4>
+          <p>Optimized HTML5 structure rendered via edge CDN with minimal DOM payloads.</p>
+        </div>
+        <div class="arch-step">
+          <span class="arch-badge">STEP 02</span>
+          <h4>Dynamic Filtering</h4>
+          <p>Vanilla JavaScript ES6+ handles instant tag selection and local indexing without reload.</p>
+        </div>
+        <div class="arch-step">
+          <span class="arch-badge">STEP 03</span>
+          <h4>AI Assistant Integration</h4>
+          <p>Client-side module parses engineering queries with sub-second response times.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+<!-- TECH CORE Site-wide Footer -->
+<footer class="techcore-footer">
+  <div class="footer-container">
+    
+    <!-- Top Grid Section -->
+    <div class="footer-grid">
+      
+      <!-- Brand & Socials Column -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">TECH CORE<span class="accent-dot">.</span></a>
+        <p class="brand-desc">
+          A minimalist developer platform focused on high-density tech articles, clean code architecture, and modern AI integrations.
+        </p>
+
+        <!-- Rounded Social Icon Boxes -->
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)" class="social-icon">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:contact@techcore.dev" aria-label="Email" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles Directory</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="author.html">Author</a></li>
+          <li><a href="about.html">About Case Study</a></li>
+        </ul>
+      </div>
+
+      <!-- Topics Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">TOPICS</h4>
+        <ul class="footer-links">
+          <li><a href="#">JavaScript Engines</a></li>
+          <li><a href="#">AI Workflows</a></li>
+          <li><a href="#">CSS Grid Systems</a></li>
+          <li><a href="#">Glass UI Architecture</a></li>
+        </ul>
+      </div>
+
+      <!-- Author & Status Column -->
+      <div class="footer-links-col">
+        <h4 class="col-title">AUTHOR</h4>
+        <ul class="footer-links">
+          <li><a href="author.html">Mahnoor Fatima</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Systems Operational Green Pill Button -->
+        <button id="systemStatusBtn" class="system-status-pill" type="button">
+          <span class="status-pulse"></span>
+          <span>Systems Operational</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Thin Horizontal Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom Row (Copyright & Back to Top) -->
+    <div class="footer-bottom">
+      <div class="copyright-text">
+        © 2026 Tech Core. Built by <strong>Mahnoor Fatima</strong>.
+      </div>
+
+      <button type="button" class="top-pill-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>Back to Top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- System Status Interactive Modal Pop-Up -->
+  <div id="statusModal" class="status-modal-overlay">
+    <div class="status-modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="status-pulse"></span>
+          <h3>System Status Overview</h3>
+        </div>
+        <button id="closeModalBtn" class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="status-row">
+          <span>API Infrastructure</span>
+          <span class="status-tag online">Operational (24ms)</span>
+        </div>
+        <div class="status-row">
+          <span>CDN & Edge Servers</span>
+          <span class="status-tag online">100% Uptime</span>
+        </div>
+        <div class="status-row">
+          <span>AI Assistant Engine</span>
+          <span class="status-tag online">Active</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fast Smooth Scroll Logic Script -->
+  <script>
+    function forceScrollToTop(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      const fastScrollStep = () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0) {
+          const speed = Math.max(currentScroll / 3, 120);
+          window.scrollBy(0, -speed);
+          document.documentElement.scrollBy(0, -speed);
+          document.body.scrollBy(0, -speed);
+          requestAnimationFrame(fastScrollStep);
+        }
+      };
+      fastScrollStep();
+    }
+  </script>
+
+  <!-- JS Logic Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ai-assistant.js"></script>
+  <script src="js/global-animations.js"></script>
+
+</body>
+</html>

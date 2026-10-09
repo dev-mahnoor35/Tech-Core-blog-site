@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Articles — Tech Core</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+  <style>
+    .article-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+    .hero-article-img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .clickable-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .clickable-card:hover h3, 
+    .clickable-card:hover h4 {
+      text-decoration: underline;
+    }
+    .contributor-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 0.75rem auto;
+      display: block;
+      filter: grayscale(100%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">TECH CORE.</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="resources.html">Resources</a>
+      <a href="courses.html">Courses</a>
+       <a href="author.html">Author</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <input type="text" placeholder="Search guides..." class="search-input">
+      <a href="account.html" class="btn-black">Get Started</a>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+
+    <!-- Page Title -->
+    <h1 style="font-size: 3rem; font-weight: 850; margin-bottom: 1.5rem;">Blog & Articles</h1>
+
+    <!-- Filter Tags Bar -->
+    <div style="display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+      <a href="articles.html" class="btn-black" style="padding: 0.4rem 1rem; font-size: 0.8rem; text-decoration: none;">All</a>
+      <a href="#" class="pill-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem; text-decoration: none;">Design Systems</a>
+      <a href="#" class="pill-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem; text-decoration: none;">Frontend Architecture</a>
+      <a href="#" class="pill-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem; text-decoration: none;">AI Integration</a>
+      <a href="#" class="pill-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem; text-decoration: none;">Prototyping</a>
+    </div>
+
+    <!-- Featured Hero Article -->
+    <a href="article-detail.html" class="clickable-card float-card" style="border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 6px; margin-bottom: 3.5rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Mastering Design Systems" class="hero-article-img">
+        <div>
+          <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">NEWS</span>
+          <h2 style="font-size: 2.1rem; font-weight: 850; margin: 0.5rem 0 1rem 0; line-height: 1.2;">Mastering Modern Frontend Design Systems at Scale</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Learn how to implement modular design tokens to maintain consistency across enterprise React applications. We explore component libraries, prompt automation, and governance strategies.
+          </p>
+          <span class="btn-black" style="display: inline-block; padding: 0.6rem 1.25rem; font-size: 0.85rem;">Read More</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Trending Categories -->
+    <section style="margin-bottom: 3.5rem;">
+      <p style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem;">❖ TRENDING CATEGORIES</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+        <a href="articles.html" class="clickable-card float-card" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 4px; border: 1px solid var(--border-color);">
+          <h3 style="font-size: 1.2rem; font-weight: 850; margin-bottom: 0.25rem;">Design Systems</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Explore 12 articles →</p>
+        </a>
+
+        <a href="articles.html" class="clickable-card float-card" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 4px; border: 1px solid var(--border-color);">
+          <h3 style="font-size: 1.2rem; font-weight: 850; margin-bottom: 0.25rem;">AI Workflows</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Explore 8 articles →</p>
+        </a>
+
+        <a href="articles.html" class="clickable-card float-card" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 4px; border: 1px solid var(--border-color);">
+          <h3 style="font-size: 1.2rem; font-weight: 850; margin-bottom: 0.25rem;">Accessibility (A11y)</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Explore 5 articles →</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Main Content Layout (Grid + Sidebar) -->
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;">
+      
+      <!-- Latest Insights Grid -->
+      <div>
+        <p style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem;">❖ LATEST INSIGHTS</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          
+          <!-- Article 1 -->
+          <a href="article-detail.html" class="clickable-card float-card" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: 4px;">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500&q=80" class="article-card-img" alt="Minimalist UI">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted);">NEWS</span>
+            <h4 style="font-size: 1.05rem; font-weight: 850; margin: 0.3rem 0;">The Future of Minimalist UI</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">Is extreme minimalism hindering usability? We balance clean aesthetics with UX clarity.</p>
+          </a>
+
+          <!-- Article 2 -->
+          <a href="article-detail.html" class="clickable-card float-card" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: 4px;">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=80" class="article-card-img" alt="Vanilla JS">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted);">GUIDE</span>
+            <h4 style="font-size: 1.05rem; font-weight: 850; margin: 0.3rem 0;">Vanilla JS Module Specs</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">A comprehensive guide to gathering asynchronous data without heavy external bundles.</p>
+          </a>
+
+          <!-- Article 3 -->
+          <a href="article-detail.html" class="clickable-card float-card" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: 4px;">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=500&q=80" class="article-card-img" alt="Accessibility">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted);">A11Y</span>
+            <h4 style="font-size: 1.05rem; font-weight: 850; margin: 0.3rem 0;">Accessibility in Modern Web</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">Ensuring web apps are usable by everyone with proper ARIA states and keyboard support.</p>
+          </a>
+
+          <!-- Article 4 -->
+          <a href="article-detail.html" class="clickable-card float-card" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: 4px;">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=500&q=80" class="article-card-img" alt="Typography">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted);">TYPOGRAPHY</span>
+            <h4 style="font-size: 1.05rem; font-weight: 850; margin: 0.3rem 0;">Typography for Web Products</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">Choosing functional typefaces for readability and sharp contrast across screen sizes.</p>
+          </a>
+
+          <!-- Article 5 -->
+          <a href="article-detail.html" class="clickable-card float-card" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: 4px;">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" class="article-card-img" alt="Micro interactions">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted);">INTERACTIONS</span>
+            <h4 style="font-size: 1.05rem; font-weight: 850; margin: 0.3rem 0;">Micro-Interactions That Delight</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">How subtle CSS keyframe animations and instant feedback loops improve user experience.</p>
+          </a>
+
+          <!-- Article 6 -->
+          <a href="article-detail.html" class="clickable-card float-card" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: 4px;">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80" class="article-card-img" alt="Dark mode">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted);">UI TRENDS</span>
+            <h4 style="font-size: 1.05rem; font-weight: 850; margin: 0.3rem 0;">Dark Mode Best Practices</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">Implementing dark themes with pure CSS variables and system preference detection.</p>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Right Sidebar (Most Read + Pro Banner) -->
+      <div>
+        <p style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem;">❖ MOST READ</p>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+          <a href="article-detail.html" class="clickable-card">
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted);">01</span>
+            <h5 style="font-size: 0.95rem; font-weight: 850; margin-top: 0.2rem;">Why Your Design System Will Fail</h5>
+          </a>
+
+          <a href="article-detail.html" class="clickable-card">
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted);">02</span>
+            <h5 style="font-size: 0.95rem; font-weight: 850; margin-top: 0.2rem;">CSS Variables vs Utility Classes</h5>
+          </a>
+
+          <a href="article-detail.html" class="clickable-card">
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted);">03</span>
+            <h5 style="font-size: 0.95rem; font-weight: 850; margin-top: 0.2rem;">Prompt Engineering for Prototyping</h5>
+          </a>
+
+          <a href="article-detail.html" class="clickable-card">
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted);">04</span>
+            <h5 style="font-size: 0.95rem; font-weight: 850; margin-top: 0.2rem;">The Death of Heavy JS Frameworks</h5>
+          </a>
+        </div>
+
+        <!-- Pro Promo Box -->
+        <div style="background: #0f0f11; color: #ffffff; padding: 2rem 1.5rem; border-radius: 6px; text-align: center;">
+          <span style="font-size: 1.5rem; display: block; margin-bottom: 0.5rem;">💎</span>
+          <p style="font-size: 0.85rem; color: #d1d5db; margin-bottom: 1.25rem; line-height: 1.5;">
+            Unlock premium code snippets, UI kits, and private AI prompts.
+          </p>
+          <a href="account.html" class="btn-black" style="background: #ffffff; color: #000000; padding: 0.6rem 1.25rem; font-size: 0.8rem; text-decoration: none; display: inline-block;">JOIN NOW</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Meet Our Contributors -->
+    <section style="margin-top: 5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.75rem; font-weight: 850;">Meet our Contributors</h2>
+        <a href="about.html" style="font-size: 0.85rem; font-weight: 800; color: var(--text-primary); text-decoration: none;">View all →</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+        
+        <div style="border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 4px; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Mahnoor Fatima" class="contributor-img">
+          <h4 style="font-size: 1rem; font-weight: 850; margin-bottom: 0.2rem;">Mahnoor Fatima</h4>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">Lead Dev & Author</p>
+        </div>
+
+        <div style="border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 4px; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="David Chen" class="contributor-img">
+          <h4 style="font-size: 1rem; font-weight: 850; margin-bottom: 0.2rem;">David Chen</h4>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">Product Designer</p>
+        </div>
+
+        <div style="border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 4px; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Elena Rodriguez" class="contributor-img">
+          <h4 style="font-size: 1rem; font-weight: 850; margin-bottom: 0.2rem;">Elena Rodriguez</h4>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">Accessibility Specialist</p>
+        </div>
+
+        <div style="border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 4px; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Marcus Johnson" class="contributor-img">
+          <h4 style="font-size: 1rem; font-weight: 850; margin-bottom: 0.2rem;">Marcus Johnson</h4>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">Senior UI Designer</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Newsletter Box -->
+    <section class="newsletter-block" style="margin-top: 5rem; background: var(--bg-secondary); border: 1px solid var(--border-color); text-align: center; padding: 3rem 1.5rem;">
+      <h2 style="font-size: 2rem; font-weight: 850; margin-bottom: 0.5rem;">Subscribe to our Newsletter</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Get the latest web architecture insights and design trends delivered directly to your inbox weekly.</p>
+      
+      <form class="newsletter-form" style="justify-content: center;" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="email@address.com" required style="border: 1px solid var(--border-color);">
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- TECH CORE Site-wide Footer -->
+<footer class="techcore-footer">
+  <div class="footer-container">
+    
+    <!-- Top Grid Section -->
+    <div class="footer-grid">
+      
+      <!-- Brand & Socials Column -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">TECH CORE<span class="accent-dot">.</span></a>
+        <p class="brand-desc">
+          A minimalist developer platform focused on high-density tech articles, clean code architecture, and modern AI integrations.
+        </p>
+
+        <!-- Rounded Social Icon Boxes -->
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)" class="social-icon">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:contact@techcore.dev" aria-label="Email" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles Directory</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="author.html">Author</a></li>
+          <li><a href="about.html">About Case Study</a></li>
+        </ul>
+      </div>
+
+      <!-- Topics Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">TOPICS</h4>
+        <ul class="footer-links">
+          <li><a href="#">JavaScript Engines</a></li>
+          <li><a href="#">AI Workflows</a></li>
+          <li><a href="#">CSS Grid Systems</a></li>
+          <li><a href="#">Glass UI Architecture</a></li>
+        </ul>
+      </div>
+
+      <!-- Author & Status Column -->
+      <div class="footer-links-col">
+        <h4 class="col-title">AUTHOR</h4>
+        <ul class="footer-links">
+          <li><a href="author.html">Mahnoor Fatima</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Systems Operational Green Pill Button -->
+        <button id="systemStatusBtn" class="system-status-pill" type="button">
+          <span class="status-pulse"></span>
+          <span>Systems Operational</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Thin Horizontal Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom Row (Copyright & Back to Top) -->
+    <div class="footer-bottom">
+      <div class="copyright-text">
+        © 2026 Tech Core. Built by <strong>Mahnoor Fatima</strong>.
+      </div>
+
+      <button type="button" class="top-pill-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>Back to Top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+   <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ai-assistant.js"></script>
+  <script src="js/global-animations.js"></script>
+
+</body>
+</html>

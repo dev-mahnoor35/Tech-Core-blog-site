@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahnoor Fatima — Author & Specialist | TECH CORE.</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+  
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #111; background-color: #fff; line-height: 1.5; }
+
+    .page-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Top Specialty Banner */
+    .specialty-strip {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #111;
+      color: #fff;
+      padding: 0.85rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    .specialty-badge {
+      background: #222;
+      color: #00ff66;
+      border: 1px solid #333;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-family: monospace;
+    }
+
+    /* Interactive Terminal Section */
+    .terminal-window {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: #58a6ff;
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 0.5rem;
+    }
+    .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+    .terminal-title { color: #8b949e; font-size: 0.75rem; margin-left: 0.5rem; }
+    
+    .terminal-body { color: #c9d1d9; }
+    .terminal-prompt { color: #79c0ff; }
+    .terminal-output { color: #7ee787; margin-top: 0.3rem; }
+    .term-btn-group { display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
+    .term-btn {
+      background: #21262d;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 0.75rem;
+      transition: all 0.2s ease;
+    }
+    .term-btn:hover { background: #30363d; color: #58a6ff; }
+
+    /* Author Profile Layout */
+    .author-header-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    /* Visual Profile Card */
+    .author-card-wrapper {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .author-img-box {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      background: #f3f4f6;
+    }
+    .author-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .author-status-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(17, 17, 17, 0.85);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .status-dot { width: 8px; height: 8px; background: #00ff66; border-radius: 50%; }
+
+    .author-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 1rem;
+      background: #fafafa;
+      border-top: 1px solid #e5e7eb;
+    }
+    .stat-box { text-align: center; }
+    .stat-value { font-size: 1.35rem; font-weight: 800; color: #111; }
+    .stat-label { font-size: 0.7rem; color: #6b7280; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-top: 0.2rem; }
+
+    /* Bio Section & Skill Matrix */
+    .author-info h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0 0 0.3rem 0;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .author-role {
+      font-size: 0.95rem;
+      color: #4b5563;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .author-bio {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #374151;
+      margin-bottom: 1.25rem;
+    }
+
+    .skills-heading { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #111; margin-top: 1.5rem; }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 1.5rem 0;
+    }
+    .skill-chip {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #111;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .skill-chip:hover { background: #111; color: #fff; border-color: #111; }
+
+    /* LINKEDIN & GITHUB BUTTONS */
+    .author-social-links { 
+      display: flex; 
+      gap: 0.85rem; 
+      margin-top: 1.5rem; 
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.6rem !important;
+      padding: 0.65rem 1.3rem !important;
+      border-radius: 8px !important;
+      background: #111 !important;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      white-space: nowrap !important;
+      width: auto !important;
+      min-width: 120px !important;
+      box-sizing: border-box !important;
+      transition: all 0.2s ease !important;
+      border: 1px solid #111 !important;
+    }
+    .social-btn:hover { 
+      background: #222 !important; 
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Stack Radar Styling */
+    .stack-radar-section {
+      background: #0d1117;
+      color: #e6edf3;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #30363d;
+      margin-bottom: 3rem;
+    }
+    .radar-header h3 { font-size: 1.4rem; margin: 0 0 0.3rem 0; color: #fff; }
+    .radar-header p { font-size: 0.85rem; color: #8b949e; margin-bottom: 1.5rem; }
+
+    .radar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .radar-controls { display: flex; flex-direction: column; gap: 1rem; }
+    .radar-item {
+      background: #161b22;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .radar-item:hover, .radar-item.active {
+      border-color: #58a6ff;
+      background: #1c2128;
+    }
+    .radar-item-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: #21262d;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #238636;
+      border-radius: 4px;
+    }
+
+    .radar-details-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .skill-badge {
+      background: rgba(56, 139, 253, 0.15);
+      color: #58a6ff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+    .radar-details-card h4 { font-size: 1.1rem; margin: 0.75rem 0 0.5rem 0; color: #fff; }
+    .radar-details-card p { font-size: 0.85rem; color: #8b949e; line-height: 1.5; margin-bottom: 1rem; }
+    .skill-code-preview {
+      background: #0d1117;
+      padding: 0.85rem;
+      border-radius: 6px;
+      border: 1px solid #21262d;
+      font-size: 0.75rem;
+      color: #7ee787;
+      overflow-x: auto;
+      margin: 0;
+    }
+
+    /* Timeline Styling */
+    .timeline-section { margin-bottom: 3rem; }
+    .timeline-header h3 { font-size: 1.4rem; margin: 0 0 0.3rem 0; color: #111; }
+    .timeline-header p { font-size: 0.85rem; color: #6b7280; margin-bottom: 1.5rem; }
+
+    .timeline-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+    .timeline-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+    .timeline-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+    .timeline-tag.milestone { background: #fef3c7; color: #d97706; }
+    .timeline-tag.project { background: #e0f2fe; color: #0284c7; }
+    .timeline-date { font-size: 0.75rem; color: #9ca3af; font-weight: 600; float: right; }
+    .timeline-card h4 { font-size: 1rem; margin: 0 0 0.4rem 0; color: #111; font-weight: 800; }
+    .timeline-card p { font-size: 0.82rem; color: #4b5563; line-height: 1.45; margin: 0 0 0.75rem 0; }
+    .timeline-link { font-size: 0.78rem; font-weight: 700; color: #111; text-decoration: none; }
+    .timeline-link:hover { text-decoration: underline; }
+
+    /* HIGH-IMPACT ARTICLES SECTION STYLES */
+    .section-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .section-heading { font-size: 1.5rem; font-weight: 800; margin: 0; }
+    
+    .filter-tabs { display: flex; gap: 0.5rem; }
+    .filter-tab {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #6b7280;
+      transition: all 0.2s ease;
+    }
+    .filter-tab.active, .filter-tab:hover {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .articles-grid { display: flex; flex-direction: column; gap: 1.75rem; }
+    
+    .article-item-card {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 1.75rem;
+      align-items: center;
+      padding: 1.25rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: all 0.25s ease;
+    }
+    .article-item-card:hover { 
+      transform: translateY(-3px);
+      border-color: #111;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+    .article-thumb-wrapper {
+      width: 100%;
+      height: 165px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .article-thumb-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .article-item-card:hover .article-thumb-wrapper img { transform: scale(1.05); }
+
+    .article-item-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .meta-tag {
+      color: #2563eb;
+      background: rgba(37, 99, 235, 0.08);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+    .article-item-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.35;
+    }
+    .article-item-title a { color: #111; text-decoration: none; }
+    .article-item-title a:hover { color: #2563eb; }
+    
+    .article-item-excerpt { font-size: 0.88rem; color: #4b5563; margin: 0 0 1rem 0; line-height: 1.6; }
+    .article-actions { display: flex; gap: 1rem; align-items: center; }
+    
+    .read-more-link {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #111;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .read-more-link:hover { text-decoration: underline; color: #2563eb; }
+
+    .snippet-preview-btn {
+      font-size: 0.75rem;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    .snippet-preview-btn:hover { background: #111; color: #fff; border-color: #111; }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #0d1117;
+      color: #c9d1d9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      border: 1px solid #30363d;
+      font-family: monospace;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: none; border: none;
+      color: #8b949e; font-size: 1.2rem; cursor: pointer;
+    }
+
+    @media (max-width: 820px) {
+      .author-header-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .radar-grid { grid-template-columns: 1fr; }
+      .article-item-card { grid-template-columns: 1fr; }
+      .article-thumb-wrapper { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">TECH CORE.</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="resources.html">Resources</a>
+      <a href="courses.html">Courses</a>
+      <a href="author.html">Author</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a href="account.html" class="btn-black">Get Started</a>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+
+    <!-- Top Specialty Banner -->
+    <div class="specialty-strip">
+      <span class="specialty-badge">FEATURED AUTHOR</span>
+      <span>Specializing in Minimalist UI Architecture, CSS Tokens, & Pragmatic AI Integrations.</span>
+    </div>
+
+    <!-- Interactive Terminal -->
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <span class="terminal-dot dot-red"></span>
+        <span class="terminal-dot dot-yellow"></span>
+        <span class="terminal-dot dot-green"></span>
+        <span class="terminal-title">mahnoor@techcore-cli ~ interactive_shell</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="terminal-prompt">mahnoor@techcore:~$</span> <span id="termInput">help</span></div>
+        <div class="terminal-output" id="termOutput">Click a command button below to query author parameters:</div>
+        <div class="term-btn-group">
+          <button class="term-btn" onclick="runCommand('bio')">--bio</button>
+          <button class="term-btn" onclick="runCommand('stack')">--stack</button>
+          <button class="term-btn" onclick="runCommand('status')">--status</button>
+          <button class="term-btn" onclick="runCommand('clear')">clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Author Profile Header -->
+    <section class="author-header-grid">
+      
+      <!-- Visual Avatar Card -->
+      <div class="author-card-wrapper">
+        <div class="author-img-box">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Mahnoor Fatima Portrait">
+          <div class="author-status-tag">
+            <span class="status-dot"></span> Available for Web Projects
+          </div>
+        </div>
+        <div class="author-stats-row">
+          <div class="stat-box">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Articles</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">120K</div>
+            <div class="stat-label">Total Reads</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Author Bio & Specialization Info -->
+      <div class="author-info">
+        <h1>Mahnoor Fatima</h1>
+        <div class="author-role">Lead Developer & AI Integration Enthusiast at TECH CORE</div>
+        
+        <p class="author-bio">
+          Mahnoor Fatima is a web developer and technical author dedicated to building high-density, high-performance web applications. Her writing focuses on stripping away UI clutter in favor of strict CSS grid architecture, robust accessibility boundaries, and zero-layout-shift design systems.
+        </p>
+        <p class="author-bio">
+          She frequently engineers full-stack dashboards, interactive design tokens, and practical AI workflow tools that assist modern frontend teams in building scalable digital products.
+        </p>
+
+        <!-- Tech Stack Explorer Chips -->
+        <div class="skills-heading">Specialty Matrix (Click to Filter Articles)</div>
+        <div class="skills-container">
+          <span class="skill-chip" onclick="filterArticles('design')">Design Systems</span>
+          <span class="skill-chip" onclick="filterArticles('frontend')">CSS Architecture</span>
+          <span class="skill-chip" onclick="filterArticles('frontend')">JavaScript Engine</span>
+          <span class="skill-chip" onclick="filterArticles('ai')">AI Workflows</span>
+          <span class="skill-chip" onclick="filterArticles('all')">Show All</span>
+        </div>
+
+        <!-- LINKEDIN & GITHUB BUTTONS -->
+        <div class="author-social-links">
+          <a href="https://linkedin.com" target="_blank" class="social-btn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com" target="_blank" class="social-btn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FEATURE 1: Mini Stack Radar -->
+    <section class="stack-radar-section">
+      <div class="radar-header">
+        <h3>Technical Competency & Stack Radar</h3>
+        <p>Select a core discipline to view architectural standards and code approach.</p>
+      </div>
+
+      <div class="radar-grid">
+        <div class="radar-controls">
+          <div class="radar-item active" onclick="selectSkill(this, 'frontend')">
+            <div class="radar-item-info">
+              <span>Frontend Architecture & CSS Grid</span>
+              <strong>95%</strong>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+          </div>
+
+          <div class="radar-item" onclick="selectSkill(this, 'js')">
+            <div class="radar-item-info">
+              <span>JavaScript Engines & DOM Management</span>
+              <strong>90%</strong>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="radar-item" onclick="selectSkill(this, 'ui')">
+            <div class="radar-item-info">
+              <span>Glassmorphism & 3D UI Systems</span>
+              <strong>92%</strong>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+          </div>
+
+          <div class="radar-item" onclick="selectSkill(this, 'perf')">
+            <div class="radar-item-info">
+              <span>Performance Optimization & Vercel Deployments</span>
+              <strong>88%</strong>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+
+        <div class="radar-details-card" id="skillDetailsCard">
+          <span class="skill-badge">Core Approach</span>
+          <h4 id="skillTitle">Frontend Architecture & CSS Grid</h4>
+          <p id="skillDesc">Zero-framework CSS grid layouts prioritizing zero-layout-shift, strict tokenization, modular components, and native accessibility boundaries.</p>
+          <pre class="skill-code-preview"><code id="skillCode">/* Structural Grid Standard */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE 2: Milestones & Featured Projects Timeline -->
+    <section class="timeline-section">
+      <div class="timeline-header">
+        <h3>Milestones & Featured Projects</h3>
+        <p>Key professional highlights, platform builds, and network expansions.</p>
+      </div>
+
+      <div class="timeline-container">
+        
+        <!-- Milestone 1 -->
+        <div class="timeline-card">
+          <div class="timeline-tag milestone">Milestone</div>
+          <div class="timeline-date">2026</div>
+          <h4>2,000+ LinkedIn Community</h4>
+          <p>Expanded professional network reaching over 2,000+ developers, tech leaders, and industry connections on LinkedIn.</p>
+        </div>
+
+        <!-- Project 1: Codify -->
+        <div class="timeline-card project">
+          <div class="timeline-tag project">Featured Project</div>
+          <div class="timeline-date">2026</div>
+          <h4>Codify Website</h4>
+          <p>An interactive code management and snippet sharing platform engineered with high-density UI components and fast query execution.</p>
+          <a href="#" class="timeline-link">View Live Project ➔</a>
+        </div>
+
+        <!-- Project 2: Personal Portfolio -->
+        <div class="timeline-card project">
+          <div class="timeline-tag project">Featured Project</div>
+          <div class="timeline-date">2026</div>
+          <h4>Personal Portfolio Site</h4>
+          <p>Modern developer portfolio built with glassmorphic aesthetics, fluid responsive grids, dynamic theme switches, and Vercel hosting.</p>
+          <a href="#" class="timeline-link">View Live Project ➔</a>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="timeline-card">
+          <div class="timeline-tag milestone">Guest Speaker</div>
+          <div class="timeline-date">August 2026</div>
+          <h4>Web Dev Fundamentals Session</h4>
+          <p>Led a hands-on guest session covering client-server architecture, structural HTML5, and live CSS debugging techniques.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HIGH-IMPACT REFACTORED ARTICLES SECTION -->
+    <section>
+      <div class="section-header-bar">
+        <h2 class="section-heading">Featured Articles & Engineering Insights</h2>
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-cat="all" onclick="filterArticles('all', this)">All (4)</button>
+          <button class="filter-tab" data-cat="frontend" onclick="filterArticles('frontend', this)">Frontend Architecture</button>
+          <button class="filter-tab" data-cat="design" onclick="filterArticles('design', this)">Glassmorphism & Design</button>
+          <button class="filter-tab" data-cat="ai" onclick="filterArticles('ai', this)">Full-Stack & Workflows</button>
+        </div>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid">
+        
+        <!-- Article Card 1: Frontend & Glassmorphism -->
+        <article class="article-item-card" data-category="design">
+          <div class="article-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="Glassmorphic Code Editor UI">
+          </div>
+          <div>
+            <div class="article-item-meta">
+              <span class="meta-tag">GLASSMORPHISM UI</span>
+              <span>•</span>
+              <span>SEP 12, 2026</span>
+              <span>•</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="article-item-title"><a href="article-detail.html">Building Glassmorphic Interfaces with Modern CSS Tokens</a></h3>
+            <p class="article-item-excerpt">A comprehensive guide to implementing backdrop blurs, liquid translucency, dynamic lighting overlays, and high-contrast accessibility standards in web applications.</p>
+            <div class="article-actions">
+              <a href="article-detail.html" class="read-more-link">Read article ➔</a>
+              <button class="snippet-preview-btn" onclick="openCodeModal('Glass Token Standard', '.glass-panel {\n  background: rgba(255, 255, 255, 0.08);\n  backdrop-filter: blur(16px);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n}')">⚡ View Tokens</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article Card 2: WorkPilot & Full Stack -->
+        <article class="article-item-card" data-category="ai">
+          <div class="article-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=800&auto=format&fit=crop" alt="Dashboard Node.js Backend">
+          </div>
+          <div>
+            <div class="article-item-meta">
+              <span class="meta-tag">FULL-STACK & DASHBOARDS</span>
+              <span>•</span>
+              <span>AUG 28, 2026</span>
+              <span>•</span>
+              <span>7 min read</span>
+            </div>
+            <h3 class="article-item-title"><a href="#">Architecting WorkPilot: Scalable Node.js & Express Systems</a></h3>
+            <p class="article-item-excerpt">How to structure high-performance project management dashboards using RESTful API routes, clean DOM updating loops, and minimal memory footprint handlers.</p>
+            <div class="article-actions">
+              <a href="#" class="read-more-link">Read article ➔</a>
+              <button class="snippet-preview-btn" onclick="openCodeModal('Express Route Pattern', 'app.get(\'/api/projects\', async (req, res) => {\n  const data = await FetchProjects();\n  res.json({ status: 200, data });\n});')">⚡ View Handler</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article Card 3: DevMatrix & Analytics -->
+        <article class="article-item-card" data-category="frontend">
+          <div class="article-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Analytics Interactive Dashboard">
+          </div>
+          <div>
+            <div class="article-item-meta">
+              <span class="meta-tag">FRONTEND ANALYTICS</span>
+              <span>•</span>
+              <span>AUG 15, 2026</span>
+              <span>•</span>
+              <span>4 min read</span>
+            </div>
+            <h3 class="article-item-title"><a href="#">DevMatrix Engine: Pure JS Interactive Analytics</a></h3>
+            <p class="article-item-excerpt">Optimizing real-time telemetry rendering and zero-layout-shift UI grids for high-density developer dashboards deployed on Vercel.</p>
+            <div class="article-actions">
+              <a href="#" class="read-more-link">Read article ➔</a>
+              <button class="snippet-preview-btn" onclick="openCodeModal('State Switcher', 'const updateTheme = (theme) => {\n  document.documentElement.setAttribute(\'data-theme\', theme);\n};')">⚡ View Engine</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article Card 4: Precision Typography & Dark Theme -->
+        <article class="article-item-card" data-category="design">
+          <div class="article-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop" alt="Developer Typography & Dark Mode">
+          </div>
+          <div>
+            <div class="article-item-meta">
+              <span class="meta-tag">DESIGN SYSTEMS</span>
+              <span>•</span>
+              <span>JUL 22, 2026</span>
+              <span>•</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="article-item-title"><a href="#">Precision Typography & Dynamic Color Schemes</a></h3>
+            <p class="article-item-excerpt">Establishing visual hierarchy, fluid clamp font scaling, and seamless light/dark theme transitions for modern developer portals.</p>
+            <div class="article-actions">
+              <a href="#" class="read-more-link">Read article ➔</a>
+              <button class="snippet-preview-btn" onclick="openCodeModal('Fluid Typography', 'h1 {\n  font-size: clamp(1.8rem, 4vw, 3rem);\n  letter-spacing: -0.02em;\n}')">⚡ View CSS</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Code Snippet Modal -->
+  <div class="modal-overlay" id="codeModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCodeModal()">&times;</button>
+      <div style="color: #79c0ff; font-weight: 700; margin-bottom: 0.5rem;" id="modalTitle">Snippet Title</div>
+      <pre><code id="modalCode" style="color: #7ee787;">// Code snippet will load here...</code></pre>
+    </div>
+  </div>
+
+   <!-- TECH CORE Site-wide Footer -->
+<footer class="techcore-footer">
+  <div class="footer-container">
+    
+    <!-- Top Grid Section -->
+    <div class="footer-grid">
+      
+      <!-- Brand & Socials Column -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">TECH CORE<span class="accent-dot">.</span></a>
+        <p class="brand-desc">
+          A minimalist developer platform focused on high-density tech articles, clean code architecture, and modern AI integrations.
+        </p>
+
+        <!-- Rounded Social Icon Boxes -->
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)" class="social-icon">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:contact@techcore.dev" aria-label="Email" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles Directory</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="author.html">Author</a></li>
+          <li><a href="about.html">About Case Study</a></li>
+        </ul>
+      </div>
+
+      <!-- Topics Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">TOPICS</h4>
+        <ul class="footer-links">
+          <li><a href="#">JavaScript Engines</a></li>
+          <li><a href="#">AI Workflows</a></li>
+          <li><a href="#">CSS Grid Systems</a></li>
+          <li><a href="#">Glass UI Architecture</a></li>
+        </ul>
+      </div>
+
+      <!-- Author & Status Column -->
+      <div class="footer-links-col">
+        <h4 class="col-title">AUTHOR</h4>
+        <ul class="footer-links">
+          <li><a href="author.html">Mahnoor Fatima</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Systems Operational Green Pill Button -->
+        <button id="systemStatusBtn" class="system-status-pill" type="button">
+          <span class="status-pulse"></span>
+          <span>Systems Operational</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Thin Horizontal Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom Row (Copyright & Back to Top) -->
+    <div class="footer-bottom">
+      <div class="copyright-text">
+        © 2026 Tech Core. Built by <strong>Mahnoor Fatima</strong>.
+      </div>
+
+      <button type="button" class="top-pill-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>Back to Top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ai-assistant.js"></script>
+ <script src="js/global-animations.js"></script>
+
+  <!-- Page Interactivity Scripts -->
+  <script>
+    // Terminal Command Execution
+    function runCommand(cmd) {
+      const input = document.getElementById('termInput');
+      const output = document.getElementById('termOutput');
+      input.textContent = cmd;
+
+      if (cmd === 'bio') {
+        output.textContent = 'Mahnoor Fatima — Web developer & UI architect specializing in minimalist glassmorphism and performance optimization.';
+      } else if (cmd === 'stack') {
+        output.textContent = 'Core Stack: HTML5, CSS Grid/Variables, JavaScript (ES6+), Node.js, AI Tools & Dynamic UI Components.';
+      } else if (cmd === 'status') {
+        output.textContent = 'Status: Active • Building Codify, Portfolio & TECH CORE architecture • Open for frontend collaborations.';
+      } else if (cmd === 'clear') {
+        output.textContent = 'Terminal cleared. Select a parameter button to execute.';
+      }
+    }
+
+    // Stack Radar Data Toggle
+    const skillData = {
+      frontend: {
+        title: "Frontend Architecture & CSS Grid",
+        desc: "Zero-framework CSS grid layouts prioritizing zero-layout-shift, strict tokenization, modular components, and native accessibility boundaries.",
+        code: "/* Structural Grid Standard */\n.grid-container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 1.5rem;\n}"
+      },
+      js: {
+        title: "JavaScript Engines & DOM Management",
+        desc: "Event-driven asynchronous JavaScript architecture, custom state handlers, and minimal footprint utility functions.",
+        code: "// Asynchronous State Event Listener\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log('DOM fully parsed & optimized.');\n});"
+      },
+      ui: {
+        title: "Glassmorphism & 3D UI Systems",
+        desc: "Multi-layered translucent interfaces combining backdrop filters, dynamic opacity levels, and interactive 3D visual effects.",
+        code: "/* Liquid Glass UI Token */\n.glass-panel {\n  background: rgba(255, 255, 255, 0.08);\n  backdrop-filter: blur(12px);\n  border: 1px solid rgba(255, 255, 255, 0.15);\n}"
+      },
+      perf: {
+        title: "Performance Optimization & Vercel Deployments",
+        desc: "Automated CI/CD deployment pipelines, optimized asset loading, lazy-rendered DOM nodes, and high Lighthouse speed scores.",
+        code: "# Vercel Deployment Trigger\ngit add .\ngit commit -m 'Optimization: Reduced CLS & improved rendering'\ngit push origin main"
+      }
+    };
+
+    function selectSkill(element, skillKey) {
+      document.querySelectorAll('.radar-item').forEach(item => item.classList.remove('active'));
+      element.classList.add('active');
+
+      const data = skillData[skillKey];
+      document.getElementById('skillTitle').textContent = data.title;
+      document.getElementById('skillDesc').textContent = data.desc;
+      document.getElementById('skillCode').textContent = data.code;
+    }
+
+    // Article Filtering
+    function filterArticles(category, btnElement) {
+      if(btnElement) {
+        document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+        btnElement.classList.add('active');
+      } else {
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+          if(tab.getAttribute('data-cat') === category) tab.classList.add('active');
+          else tab.classList.remove('active');
+        });
+      }
+
+      const cards = document.querySelectorAll('.article-item-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'grid';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Preview Controls
+    function openCodeModal(title, code) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalCode').textContent = code;
+      document.getElementById('codeModal').style.display = 'flex';
+    }
+
+    function closeCodeModal() {
+      document.getElementById('codeModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

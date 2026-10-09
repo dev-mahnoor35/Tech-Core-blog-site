@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future of Brutalist Minimalism — Tech Core</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+  
+  <style>
+    /* Reset & Page Wrapper */
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #111; background-color: #fff; }
+
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Top Badges Header */
+    .top-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      background: #f9fafb;
+      padding: 1.25rem;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 2.5rem;
+    }
+    .badge-card {
+      background: #fff;
+      padding: 0.85rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #111;
+    }
+
+    /* Article Title & Meta */
+    .article-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: #111;
+    }
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+    .meta-tag {
+      background: #f3f4f6;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 700;
+      color: #111;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Two-Column Article Content Grid */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Left Sidebar */
+    .left-sidebar {
+      position: sticky;
+      top: 2rem;
+    }
+    .sidebar-section {
+      margin-bottom: 2rem;
+    }
+    .sidebar-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .share-btn {
+      display: block;
+      width: 100%;
+      padding: 0.4rem 0.6rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      color: #374151;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.82rem;
+    }
+    .toc-list li {
+      margin-bottom: 0.6rem;
+    }
+    .toc-list a {
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc-list a:hover { color: #111; font-weight: 600; }
+
+    /* Right Main Article Content */
+    .article-body {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #374151;
+    }
+    .takeaway-box {
+      background: #f9fafb;
+      border-left: 4px solid #111;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .takeaway-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      color: #111;
+    }
+
+    /* Comparison Cards (Bad vs Good) */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .comp-card {
+      padding: 2.5rem 1rem;
+      border-radius: 8px;
+      text-align: center;
+      background: #fafafa;
+    }
+    .comp-card.bad {
+      border: 1px solid #fca5a5;
+    }
+    .comp-card.good {
+      border: 1px solid #86efac;
+    }
+    .comp-status-bad {
+      color: #dc2626;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-top: 1rem;
+    }
+    .comp-status-good {
+      color: #16a34a;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-top: 1rem;
+    }
+
+    /* Code Box with Auto-Generator */
+    .code-container {
+      background: #111;
+      border-radius: 8px;
+      padding: 1.25rem;
+      position: relative;
+      margin: 2rem 0;
+      color: #00ff66;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #333;
+    }
+    .code-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .code-btn {
+      background: #222;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .code-btn:hover { background: #333; }
+
+    /* Author Card */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: #f9fafb;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin: 3rem 0;
+    }
+    .author-avatar {
+      width: 52px;
+      height: 52px;
+      background: #111;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* Comments Section */
+    .comment-actions-btn {
+      background: none;
+      border: none;
+      color: #6b7280;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 0.75rem;
+      text-decoration: underline;
+    }
+    .comment-actions-btn:hover { color: #111; }
+    .comment-actions-btn.delete:hover { color: #dc2626; }
+
+    @media (max-width: 768px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .left-sidebar { position: static; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .top-badge-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">TECH CORE.</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="resources.html">Resources</a>
+      <a href="courses.html">Courses</a>
+      <a href="author.html">Author</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a href="account.html" class="btn-black">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Page Main Wrapper -->
+  <div class="page-wrapper">
+
+    <!-- Top Badges -->
+    <div class="top-badge-grid">
+      <div class="badge-card">Step-by-step Guide for Scalable UI</div>
+      <div class="badge-card">Set Rules for Minimalist CSS</div>
+      <div class="badge-card">Pick Components That Perform</div>
+    </div>
+
+    <!-- Article Header -->
+    <header class="article-header">
+      <h1 class="article-title">The Future of Brutalist Minimalism</h1>
+      <div class="article-meta">
+        <span><strong>Mahnoor Fatima</strong></span>
+        <span>•</span>
+        <span>August 24, 2026</span>
+        <span>•</span>
+        <span>6 min read</span>
+        <span class="meta-tag">DESIGN ARCHITECTURE</span>
+      </div>
+    </header>
+
+    <!-- Two-Column Layout -->
+    <div class="article-layout">
+
+      <!-- Sidebar -->
+      <aside class="left-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Share</div>
+          <a href="#" class="share-btn">LinkedIn</a>
+          <a href="#" class="share-btn">Twitter</a>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Contents</div>
+          <ul class="toc-list">
+            <li><a href="#evolution">Evolution of Clean</a></li>
+            <li><a href="#usability">Usability vs. Aesthetics</a></li>
+            <li><a href="#implementation">Implementation Details</a></li>
+            <li><a href="#next-phase">The Next Phase</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Article Body -->
+      <main class="article-body">
+
+        <!-- Key Takeaway -->
+        <div class="takeaway-box">
+          <div class="takeaway-title">◆ TL;DR (KEY TAKEAWAY)</div>
+          <p style="margin:0; font-size: 0.9rem;">
+            Minimalism is evolving from "less content" to "less clutter". The next generation of minimalist frontend architecture focuses on high-density information presented with structural clarity, strong border contrast, and zero layout shift.
+          </p>
+        </div>
+
+        <p>
+          For the past decade, digital product design has been dominated by soft shadows and low contrast. As web applications grow more complex, extreme minimalism is hitting a wall where usability suffers.
+        </p>
+
+        <h2 id="evolution" style="font-size: 1.4rem; font-weight: 800; margin-top: 2rem;">The Evolution of Clean</h2>
+        <p>
+          We stripped away unnecessary decorations, gradients, and subtle blurs in favor of high contrast whitespace. Today, we are seeing a shift: "The Clean Aesthetic" has matured. It is no longer about emptiness; it is about explicit structure and reliability.
+        </p>
+
+        <blockquote style="border-left: 3px solid #111; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; font-weight: 600;">
+          "True minimalism isn't the absence of elements, but the presence of value."
+        </blockquote>
+
+        <h2 id="usability" style="font-size: 1.4rem; font-weight: 800; margin-top: 2rem;">Usability vs. Aesthetics</h2>
+        <p>
+          The danger of modern flat design lies in "mystery meat navigation"—where interactive elements are so subtle they become invisible. A button should look like a button, and input fields need clear borders.
+        </p>
+
+        <!-- BAD vs GOOD Cards -->
+        <div class="comparison-grid">
+          <div class="comp-card bad">
+            <button style="background: transparent; border: none; color: #9ca3af; font-weight: 600;">Enabled ➔</button>
+            <div class="comp-status-bad">✕ BAD: LOW CONTRAST</div>
+            <div style="font-size: 0.7rem; color: #6b7280; margin-top: 0.3rem;">Ghost buttons confuse user interaction boundary.</div>
+          </div>
+
+          <div class="comp-card good">
+            <button style="background: #111; color: #fff; border: 1px solid #111; padding: 0.5rem 1rem; font-weight: 700; border-radius: 4px;">Focus ➔</button>
+            <div class="comp-status-good">✓ GOOD: CLEAR BOUNDARY</div>
+            <div style="font-size: 0.7rem; color: #6b7280; margin-top: 0.3rem;">High contrast border defines active clickable area.</div>
+          </div>
+        </div>
+
+        <!-- Implementation Details & Code Generator -->
+        <h2 id="implementation" style="font-size: 1.4rem; font-weight: 800; margin-top: 2rem;">Implementation Details</h2>
+        <p>
+          Achieving reliable UI requires rigorous CSS tokens. We are moving away from soft shadows toward strict grid alignment and instant hover feedback loops:
+        </p>
+
+        <!-- Interactive Code Generator Box -->
+        <div class="code-container">
+          <div class="code-header">
+            <span style="font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 700;">Automatic Token Generator</span>
+            <div class="code-actions">
+              <button class="code-btn" onclick="generateNewCode()">⚡ Generate New Snippet</button>
+              <button class="code-btn" onclick="copyCodeSnippet()">Copy</button>
+            </div>
+          </div>
+          <pre id="codeSnippetDisplay" style="margin:0; overflow-x: auto;">.card-component {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card-component:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-black);
+}</pre>
+        </div>
+
+        <h2 id="next-phase" style="font-size: 1.4rem; font-weight: 800; margin-top: 2rem;">The Next Phase</h2>
+        <p>
+          The future isn't just about how it looks, but how fast it scales. Minimalist design systems are robust because they rely on fundamental principles of typography and layout precision rather than visual trends.
+        </p>
+
+        <!-- Author Profile Card -->
+        <div class="author-card">
+          <div class="author-avatar">MF</div>
+          <div>
+            <h4 style="margin: 0 0 0.25rem 0; font-size: 1.05rem;">Mahnoor Fatima</h4>
+            <p style="margin: 0 0 0.5rem 0; font-size: 0.85rem; color: #6b7280;">Lead Developer & AI Integration Enthusiast at TECH CORE.</p>
+            <div style="display: flex; gap: 1rem; font-size: 0.8rem; font-weight: 700;">
+              <a href="#" style="color: #111;">LinkedIn</a>
+              <a href="#" style="color: #111;">GitHub</a>
+              <a href="about.html" style="color: #111;">About Author</a>
+            </div>
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 3rem 0;">
+
+        <!-- Discussion Section -->
+        <section id="discussion">
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">Discussion & Community Feedback</h2>
+
+          <!-- Alert Notification -->
+          <div id="commentAlert" style="display: none; background: #111; color: #fff; padding: 0.75rem 1rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem;">
+            ✓ Operation completed successfully!
+          </div>
+
+          <!-- Form -->
+          <form id="commentForm" onsubmit="handleCommentPost(event)" style="margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <input type="text" id="commentAuthor" placeholder="Name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.9rem;">
+              <input type="email" id="commentEmail" placeholder="Email (will not be published)" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.9rem;">
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <textarea id="commentText" placeholder="Share your thoughts on design systems..." rows="4" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.9rem; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" style="padding: 0.85rem 1.75rem; font-weight: 700; cursor: pointer; background: #000; color: #fff; border: none; border-radius: 4px; letter-spacing: 0.05em;">POST COMMENT</button>
+          </form>
+
+          <!-- Dynamic Comments List -->
+          <div id="commentsContainer" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- TECH CORE Site-wide Footer -->
+<footer class="techcore-footer">
+  <div class="footer-container">
+    
+    <!-- Top Grid Section -->
+    <div class="footer-grid">
+      
+      <!-- Brand & Socials Column -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">TECH CORE<span class="accent-dot">.</span></a>
+        <p class="brand-desc">
+          A minimalist developer platform focused on high-density tech articles, clean code architecture, and modern AI integrations.
+        </p>
+
+        <!-- Rounded Social Icon Boxes -->
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)" class="social-icon">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:contact@techcore.dev" aria-label="Email" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles Directory</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="author.html">Author</a></li>
+          <li><a href="about.html">About Case Study</a></li>
+        </ul>
+      </div>
+
+      <!-- Topics Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">TOPICS</h4>
+        <ul class="footer-links">
+          <li><a href="#">JavaScript Engines</a></li>
+          <li><a href="#">AI Workflows</a></li>
+          <li><a href="#">CSS Grid Systems</a></li>
+          <li><a href="#">Glass UI Architecture</a></li>
+        </ul>
+      </div>
+
+      <!-- Author & Status Column -->
+      <div class="footer-links-col">
+        <h4 class="col-title">AUTHOR</h4>
+        <ul class="footer-links">
+          <li><a href="author.html">Mahnoor Fatima</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Systems Operational Green Pill Button -->
+        <button id="systemStatusBtn" class="system-status-pill" type="button">
+          <span class="status-pulse"></span>
+          <span>Systems Operational</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Thin Horizontal Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom Row (Copyright & Back to Top) -->
+    <div class="footer-bottom">
+      <div class="copyright-text">
+        © 2026 Tech Core. Built by <strong>Mahnoor Fatima</strong>.
+      </div>
+
+      <button type="button" class="top-pill-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>Back to Top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+<script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ai-assistant.js"></script>
+ <script src="js/global-animations.js"></script>
+
+
+  <!-- Code Generator & Comment Engine Script -->
+  <script>
+    // --- 1. CODE GENERATOR FUNCTIONALITY ---
+    const codeSnippets = [
+`.card-component {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card-component:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-black);
+}`,
+`.button-brutalist {
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+  padding: 0.75rem 1.5rem;
+  font-weight: 800;
+  box-shadow: 4px 4px 0px #888;
+  transition: all 0.15s ease;
+}
+
+.button-brutalist:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #888;
+}`,
+`.input-minimal {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+}
+
+.input-minimal:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}`
+    ];
+
+    let currentSnippetIndex = 0;
+
+    function generateNewCode() {
+      currentSnippetIndex = (currentSnippetIndex + 1) % codeSnippets.length;
+      document.getElementById('codeSnippetDisplay').textContent = codeSnippets[currentSnippetIndex];
+      showAlert("New code snippet generated!");
+    }
+
+    function copyCodeSnippet() {
+      const codeText = document.getElementById('codeSnippetDisplay').textContent;
+      navigator.clipboard.writeText(codeText);
+      showAlert("Code copied to clipboard!");
+    }
+
+    // --- 2. COMMENTS ENGINE WITH EDIT & DELETE ---
+    const DEFAULT_COMMENTS = [
+      {
+        id: 1700000000000,
+        author: 'David Chen',
+        time: '2 hours ago',
+        content: 'Great insights on contrast boundaries! The code snippet for utility CSS tokens worked seamlessly in our project setup.'
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', loadComments);
+
+    function getStoredComments() {
+      const data = localStorage.getItem('techcore_brutalist_comments');
+      return data ? JSON.parse(data) : DEFAULT_COMMENTS;
+    }
+
+    function saveStoredComments(comments) {
+      localStorage.setItem('techcore_brutalist_comments', JSON.stringify(comments));
+    }
+
+    function loadComments() {
+      const comments = getStoredComments();
+      const container = document.getElementById('commentsContainer');
+      container.innerHTML = '';
+      comments.forEach(comment => renderCommentCard(comment));
+    }
+
+    function handleCommentPost(event) {
+      event.preventDefault();
+
+      const nameInput = document.getElementById('commentAuthor');
+      const emailInput = document.getElementById('commentEmail');
+      const textInput = document.getElementById('commentText');
+
+      const name = nameInput.value.trim();
+      const text = textInput.value.trim();
+
+      if (!name || !text) return;
+
+      const newComment = {
+        id: Date.now(),
+        author: name,
+        time: 'Just now',
+        content: text
+      };
+
+      const comments = getStoredComments();
+      comments.unshift(newComment);
+      saveStoredComments(comments);
+
+      loadComments();
+
+      // Clear inputs
+      nameInput.value = '';
+      emailInput.value = '';
+      textInput.value = '';
+
+      showAlert("✓ Comment posted & added successfully!");
+    }
+
+    function renderCommentCard(comment) {
+      const container = document.getElementById('commentsContainer');
+      const card = document.createElement('div');
+      card.id = `comment-${comment.id}`;
+      card.style.cssText = 'background: #ffffff; padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: 8px;';
+
+      card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <div>
+            <strong style="font-size: 0.95rem; color: #111;">${escapeHTML(comment.author)}</strong>
+            <span style="font-size: 0.8rem; color: #6b7280; margin-left: 0.5rem;">${comment.time}</span>
+          </div>
+          <div>
+            <button class="comment-actions-btn" onclick="editComment(${comment.id})">Edit</button>
+            <button class="comment-actions-btn delete" onclick="deleteComment(${comment.id})">Delete</button>
+          </div>
+        </div>
+        <div id="comment-body-${comment.id}">
+          <p style="font-size: 0.88rem; color: #374151; margin: 0; line-height: 1.5;">${escapeHTML(comment.content)}</p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    }
+
+    function deleteComment(id) {
+      if (confirm("Are you sure you want to delete this comment?")) {
+        let comments = getStoredComments();
+        comments = comments.filter(c => c.id !== id);
+        saveStoredComments(comments);
+        loadComments();
+        showAlert("Comment deleted successfully!");
+      }
+    }
+
+    function editComment(id) {
+      const comments = getStoredComments();
+      const comment = comments.find(c => c.id === id);
+      if (!comment) return;
+
+      const bodyDiv = document.getElementById(`comment-body-${id}`);
+      bodyDiv.innerHTML = `
+        <textarea id="edit-input-${id}" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.88rem;" rows="3">${comment.content}</textarea>
+        <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem;">
+          <button onclick="saveEdit(${id})" style="background: #111; color: #fff; border: none; padding: 0.3rem 0.75rem; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.75rem;">Save</button>
+          <button onclick="loadComments()" style="background: #e5e7eb; color: #111; border: none; padding: 0.3rem 0.75rem; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.75rem;">Cancel</button>
+        </div>
+      `;
+    }
+
+    function saveEdit(id) {
+      const updatedText = document.getElementById(`edit-input-${id}`).value.trim();
+      if (!updatedText) return;
+
+      let comments = getStoredComments();
+      const comment = comments.find(c => c.id === id);
+      if (comment) {
+        comment.content = updatedText;
+        comment.time = 'Edited just now';
+        saveStoredComments(comments);
+        loadComments();
+        showAlert("Comment updated successfully!");
+      }
+    }
+
+    function showAlert(msg) {
+      const alertBox = document.getElementById('commentAlert');
+      if (alertBox) {
+        alertBox.textContent = msg;
+        alertBox.style.display = 'block';
+        setTimeout(() => {
+          alertBox.style.display = 'none';
+        }, 3500);
+      }
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+    }
+  </script>
+</body>
+</html>

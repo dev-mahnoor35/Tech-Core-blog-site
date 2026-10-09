@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account — Tech Core</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">TECH CORE.</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="resources.html">Resources</a>
+      <a href="courses.html">Courses</a>
+       <a href="author.html">Author</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a href="account.html" class="btn-black active">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Main Content (Exact Split Layout from Reference Design) -->
+  <main class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding-top: 3rem; min-height: 80vh;">
+    
+    <!-- Left Hero Quote Block -->
+    <div class="reveal-left" style="background: var(--bg-secondary); padding: 3rem; border-radius: 8px; border: 1px solid var(--border-color);">
+      <span style="font-size: 3rem; font-weight: 800; line-height: 1; color: var(--accent-black);">“</span>
+      <h2 style="font-size: 1.75rem; font-weight: 800; margin: 1rem 0 1.5rem 0; line-height: 1.3;">
+        "Good design is obvious. Great design is transparent. We build interfaces that disappear, leaving only the experience."
+      </h2>
+      <p style="font-weight: 700; font-size: 0.9rem; margin-top: 1.5rem;">Mahnoor Fatima</p>
+      <p style="color: var(--text-muted); font-size: 0.8rem;">Lead Developer & AI Learner</p>
+    </div>
+
+    <!-- Right Sign Up Form -->
+    <div class="reveal-right" id="authCardContainer" style="background: #ffffff; padding: 2.5rem; border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+      <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.25rem;">Create an account</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2rem;">Join our community of developers & engineers.</p>
+
+      <!-- Fixed Form with Working Onsubmit Listener -->
+      <form id="createAccountForm" onsubmit="handleAccountFormSubmit(event)">
+        <div style="margin-bottom: 1.25rem;">
+          <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 0.4rem;">Email address</label>
+          <input type="email" id="accountUserEmail" placeholder="name@company.com" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: inherit; font-size: 0.9rem;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 0.4rem;">Password</label>
+          <input type="password" placeholder="Min. 8 characters" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: inherit; font-size: 0.9rem;">
+        </div>
+
+        <button type="submit" class="btn-black" style="width: 100%; padding: 0.85rem; letter-spacing: 0.05em; font-weight: 700; cursor: pointer;">CREATE ACCOUNT</button>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- TECH CORE Site-wide Footer -->
+<footer class="techcore-footer">
+  <div class="footer-container">
+    
+    <!-- Top Grid Section -->
+    <div class="footer-grid">
+      
+      <!-- Brand & Socials Column -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">TECH CORE<span class="accent-dot">.</span></a>
+        <p class="brand-desc">
+          A minimalist developer platform focused on high-density tech articles, clean code architecture, and modern AI integrations.
+        </p>
+
+        <!-- Rounded Social Icon Boxes -->
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)" class="social-icon">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:contact@techcore.dev" aria-label="Email" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles Directory</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="author.html">Author</a></li>
+          <li><a href="about.html">About Case Study</a></li>
+        </ul>
+      </div>
+
+      <!-- Topics Links -->
+      <div class="footer-links-col">
+        <h4 class="col-title">TOPICS</h4>
+        <ul class="footer-links">
+          <li><a href="#">JavaScript Engines</a></li>
+          <li><a href="#">AI Workflows</a></li>
+          <li><a href="#">CSS Grid Systems</a></li>
+          <li><a href="#">Glass UI Architecture</a></li>
+        </ul>
+      </div>
+
+      <!-- Author & Status Column -->
+      <div class="footer-links-col">
+        <h4 class="col-title">AUTHOR</h4>
+        <ul class="footer-links">
+          <li><a href="author.html">Mahnoor Fatima</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Systems Operational Green Pill Button -->
+        <button id="systemStatusBtn" class="system-status-pill" type="button">
+          <span class="status-pulse"></span>
+          <span>Systems Operational</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Thin Horizontal Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom Row (Copyright & Back to Top) -->
+    <div class="footer-bottom">
+      <div class="copyright-text">
+        © 2026 Tech Core. Built by <strong>Mahnoor Fatima</strong>.
+      </div>
+
+      <button type="button" class="top-pill-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>Back to Top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ai-assistant.js"></script>
+  <script src="js/global-animations.js"></script>
+
+  <!-- Form Submission & AI Sync Handler Direct Script -->
+  <script>
+    function handleAccountFormSubmit(event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById('accountUserEmail');
+      const userEmail = emailInput && emailInput.value ? emailInput.value : 'Developer';
+
+      // 1. Exact 2 lines for Account Creation
+      localStorage.setItem('techcore_user_account', 'true');
+      localStorage.setItem('techcore_user_email', userEmail);
+
+      // 2. Visual Success Card Update
+      const container = document.getElementById('authCardContainer');
+      if (container) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 2rem 1rem;">
+            <div style="width: 54px; height: 54px; background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.2rem auto; font-weight: 700;">✓</div>
+            <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.4rem; color: #111;">Account Created!</h2>
+            <p style="font-size: 0.85rem; color: #6b7280; margin-bottom: 1.5rem;">Welcome to Tech Core, <strong>${userEmail}</strong>! Your developer account is now active.</p>
+            <button onclick="location.reload()" class="btn-black" style="padding: 0.75rem 1.5rem; cursor: pointer;">CONTINUE</button>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>  
+</html>
