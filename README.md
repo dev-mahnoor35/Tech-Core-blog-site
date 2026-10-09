@@ -1,6 +1,8 @@
 Tech Core — Next-Gen Knowledge Ecosystem & Developer Platform
 Tech Core is an enterprise-grade, high-performance web platform and knowledge architecture built strictly with Vanilla Web Standards. Designed with a sleek Liquid Glass UI aesthetic, zero-bloat runtime, and SaaS-level interactive features, Tech Core empowers modern developers, software architects, and engineering leads with high-signal resources, interactive roadmaps, and AI-driven intelligence.
 
+
+
 🌟 Key Highlights & Feature Matrix
 🎨 Liquid Glass UI & Modern Design System
 Glassmorphic Components: Multi-layered CSS backdrop-blur cards, responsive border glow effects, and liquid glass styling across all core components.
@@ -11,6 +13,8 @@ Interactive Mouse Spotlight: Dynamic cursor position tracking creating a fluid s
 
 Focus Reading Mode & Scroll Progress Bar: Minimalist distraction-free reading toggle coupled with a real-time top progress bar tracking scroll velocity.
 
+
+
 🧠 Built-In AI Assistant & Command Intelligence
 Bilingual Context-Aware AI Engine: Intelligent query handler responsive to both English and Roman Urdu developer technical queries.
 
@@ -20,10 +24,14 @@ Global Command Palette (Ctrl + K / Cmd + K): Instant keyboard navigation layer a
 
 Activity & Intent Analytics: Local session tracking for user intents, common topics, and AI interaction history.
 
+
+
 ⚡ Resource Hub & External Router
 Fail-Safe Resource Exploration: Direct integration linking resource topics (UI Kits, JS Specs, AI Prompting, CI/CD, Roadmaps) to official documentation (MDN, W3C, GitHub, Roadmap.sh).
 
 Client-Side Live Filter: Instant text filtering that dynamically shows/hides resource cards with responsive CSS fade transitions.
+
+
 
 📁 Repository Directory Structure
 Plaintext
@@ -40,6 +48,10 @@ Tech-Core-blog-site/
 └── js/
     ├── main.js         # Core Platform Logic, Event Delegation & Dynamic Injections
     └── ai-assistant.js # Bilingual AI Logic, Voice Engine & Intent Knowledge Base
+
+	
+
+	
 💻 Tech Stack & Architecture
 Markup: Semantic HTML5 (index.html, articles.html, resources.html, courses.html, author.html, about.html)
 
